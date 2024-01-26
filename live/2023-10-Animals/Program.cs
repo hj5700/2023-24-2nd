@@ -21,6 +21,42 @@ foreach (var animal in zoo)
     }
 }
 
+NeueListe(ref zoo);
+
+foreach (var animal in zoo)
+{
+    // Calls ToString
+    Console.WriteLine(animal);
+
+    // Call to abstract method
+    animal.MakeSound();
+
+    // Note: is operator to check AND convert type
+    if (animal is Cat c) { c.Purr(); }
+    else if (animal is Dog d) { d.Growl(); }
+
+    foreach (var other in zoo)
+    {
+        // Call to abstract property
+        Console.Write($"\t{animal.WhoAmI} does ");
+        if (!animal.Likes(other)) { Console.Write("not "); }
+        Console.WriteLine($"like {other.WhoAmI}");
+    }
+}
+
+
+
+
+
+void NeueListe(ref List<Animal> zoo)
+{
+    zoo = new List<Animal> { new Cat(), new Dog(), new Bird(), new Cat(), new Bird(), new Cat() };
+}
+
+
+
+
+
 // Base class
 abstract class Animal
 {

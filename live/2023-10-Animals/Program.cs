@@ -1,5 +1,5 @@
 ﻿// Array of objects
-var zoo = new Animal[] { new Cat(), new Dog(), new Bird() };
+List<Animal> zoo = new List<Animal> { new Cat(), new Dog(), new Bird() };
 foreach (var animal in zoo)
 {
     // Calls ToString
@@ -55,7 +55,7 @@ class Cat : Mammal
         LegsWritable = 4;
     }
 
-    public override string WhoAmI => "😺";
+    public override string WhoAmI => "Katze";
 
     public override int Legs => 4;
 
@@ -84,7 +84,7 @@ class Dog : Mammal
         LegsWritable = 4;
     }
 
-    public override string WhoAmI => "🐶";
+    public override string WhoAmI => "Hund";
 
     public override int Legs => 4;
 
@@ -112,7 +112,7 @@ class Bird : Animal
         LegsWritable = 2;
     }
 
-    public override string WhoAmI => "🐦";
+    public override string WhoAmI => "Vogel";
 
     public override int Legs => 2;
 
